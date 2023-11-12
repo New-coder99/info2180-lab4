@@ -5,7 +5,7 @@ $superheroes = [
       "id" => 1,
       "name" => "Steve Rogers",
       "alias" => "Captain America",
-      "biography" => "Recipient of the Super-Soldier serum, World War II hero Steve Rogers fights for American ideals as one of the world’s mightiest heroes and the leader of the Avengers.",
+      "biography" => "Recipient of the Super-Soldier serums, World War II hero Steve Rogers fights for American ideals as one of the world’s mightiest heroes and the leader of the Avengers.",
   ],
   [
       "id" => 2,
@@ -62,11 +62,12 @@ $superheroes = [
       "biography" => "Notably powerful, Wanda Maximoff has fought both against and with the Avengers, attempting to hone her abilities and do what she believes is right to help the world.",
   ], 
 ];
-
+$jsonString=json_encode($superheroes);
+class
 ?>
-
 <ul>
 <?php foreach ($superheroes as $superhero): ?>
   <li><?= $superhero['alias']; ?></li>
+  <li><?=$superhero['name'];?><li>
 <?php endforeach; ?>
 </ul>
