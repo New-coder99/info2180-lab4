@@ -62,12 +62,34 @@ $superheroes = [
       "biography" => "Notably powerful, Wanda Maximoff has fought both against and with the Avengers, attempting to hone her abilities and do what she believes is right to help the world.",
   ], 
 ];
-$jsonString=json_encode($superheroes);
-class
+
+ echo '<hr>'; 
+if (!($_GET['query'] == '')) {
+    $query = $_GET['query'];
+    $query = htmlspecialchars($query);
+
+    $foundSuperhero = null;
+    foreach ($superheroes as $superhero) {
+        if (strcasecmp($superhero['name'], $query) === 0 || strcasecmp($superhero['alias'], $query) === 0) {
+            $foundSuperhero = $superhero;
+            break;
+        }
+    }
+
+    if ($foundSuperhero !== null) {
+        echo '<h3>' . $foundSuperhero['alias'] . '</h3>';
+        echo '<h4>' . $foundSuperhero['name'] . '</h4>';
+        echo '<p>' . $foundSuperhero['biography'] . '</p>';
+    } else {
+        echo '<p id="notfound">SUPERHERO NOT FOUND</p>';
+    }
+} else {
+    echo "<ul>";
+    foreach ($superheroes as $superhero) {
+        echo '<li>' . $superhero['alias'] . '</li>';
+    }
+    echo "</ul>";
+}
+
+
 ?>
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-  <li><?=$superhero['name'];?><li>
-<?php endforeach; ?>
-</ul>
