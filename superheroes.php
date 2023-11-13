@@ -84,6 +84,7 @@ if (!($_GET['query'] == '')) {
         echo '<p id="notfound">SUPERHERO NOT FOUND</p>';
     }
 } else {
+    
     echo "<ul>";
     foreach ($superheroes as $superhero) {
         echo '<li>' . $superhero['alias'] . '</li>';

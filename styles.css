@@ -20,6 +20,7 @@ body{
 .p{
     color: rgb(81, 220, 241);
 }
+
 .search.container{
     align-content: center;
 }
@@ -28,6 +29,7 @@ body{
     height: 21px;
     
 }
+
 .btn{
     background-color: azure;
     border-color: rgb(0, 0, 0);
